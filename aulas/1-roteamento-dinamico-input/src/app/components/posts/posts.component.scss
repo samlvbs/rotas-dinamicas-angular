@@ -1,0 +1,20 @@
+.container{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap:20px;
+  margin: 10px
+}
+.card{
+  width: 80%;
+  padding: 10px;
+  background-color: rgb(105, 105, 105);
+  cursor: pointer;
+}
+.card:hover{
+  background-color: rgb(194, 194, 194);
+  color: black;
+}

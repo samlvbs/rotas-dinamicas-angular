@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Postagens do usuario {{userId}}</h1>
+  @for (post of postsList$ | async; track post;) {
+    <div class="card">
+      <div style="text-align: center; padding: 10px;">
+        <h3>Titulo: {{post.title}}</h3>
+      </div>
+    <div><h4>Conteudo: </h4>{{post.body}}</div>
+    </div>
+  }
+</div>
