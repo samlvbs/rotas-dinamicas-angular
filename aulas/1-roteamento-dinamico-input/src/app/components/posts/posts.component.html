@@ -1,7 +1,8 @@
+<router-outlet></router-outlet>
 <div class="container">
-  <h1>Postagens do usuario {{userId}}</h1>
+  <h1>Postagens do usuario {{_userId}}</h1>
   @for (post of postsList$ | async; track post;) {
-    <div class="card">
+    <div class="card" [routerLink]="[post.id]">
       <div style="text-align: center; padding: 10px;">
         <h3>Titulo: {{post.title}}</h3>
       </div>

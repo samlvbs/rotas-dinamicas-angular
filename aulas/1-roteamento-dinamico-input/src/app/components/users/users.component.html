@@ -1,16 +1,22 @@
-<h1 style="color: white; text-align: center; margin: 10px;">
-  Lista de usuarios
-</h1>
-<h2 style="color: white; ">
-  Consumindo API: <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a>
-</h2>
-<div class="container">
-  @for (user of usersList$ | async; track user) {
-    <div class="card" [routerLink]="['/posts', user.id]">
-      <div>ID: {{user.id}}</div>
-      <div>Nome do usuario: {{user.name}}</div>
-    </div>
-  }
-  
+<div style="display: flex;">
+  <div class="users">
+    <h1 style="color: white; text-align: center; margin: 10px;">
+      Lista de usuarios
+    </h1>
+    <h2 style="color: white; ">
+      Consumindo API: <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a>
+    </h2>
+    @for (user of usersList$ | async; track user) {
+      <div class="card" [routerLink]="['posts', user.id]">
+        <div>ID: {{user.id}}</div>
+        <div>Nome do usuario: {{user.name}}</div>
+      </div>
+    }
+  </div>
+  <div class="posts">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+
 
