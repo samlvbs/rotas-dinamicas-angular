@@ -1,0 +1,16 @@
+<h1 style="text-align: center;">To-do list</h1>
+<div class="container-todos">
+  @for(todo of todosList$ | async; track todo){
+    @if (todo.completed == true) {
+      <div class="card-todo complete" >
+        <h4>Tittle: {{todo.title}}</h4>
+        <p>Completo</p>
+      </div>
+    } @else {
+      <div class="card-todo incomplete">
+        <h4>Tittle: {{todo.title}}</h4>
+        <p>Incompleto</p>
+      </div>
+    }
+  }
+</div>

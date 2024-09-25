@@ -1,0 +1,11 @@
+<h1 style="text-align: center;">Posts</h1>
+<div class="container-posts">
+  @for (post of postsList$ | async; track post) {
+    <div class='card-post'>
+      <p>Código: {{post.id}}</p>
+      <h4>Titulo: {{post.title}}</h4>
+      <p>{{post.body}}</p>
+    </div>
+  }
+</div>
+

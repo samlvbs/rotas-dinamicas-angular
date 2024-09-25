@@ -1,0 +1,34 @@
+.container-todos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card-todo{
+  background-color: gray;
+  margin: 5px;
+  width: 40%;
+  height: 80px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  @media(max-width: 800px) {
+    height: auto;
+  }
+}
+.complete{
+  background-color: rgb(86, 119, 86);
+  &:hover{
+    background-color: green;
+  }
+}
+
+.incomplete{
+  background-color: rgb(128, 83, 83);
+  &:hover{
+    background-color: red;
+  }
+}

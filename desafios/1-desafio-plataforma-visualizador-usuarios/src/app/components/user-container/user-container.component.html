@@ -1,0 +1,12 @@
+@if (user$ | async; as user) {
+  <div class="container-user">
+    <h1 style="text-align: center;">{{user.name}}</h1>
+    <nav>
+      <a routerLink="todos" routerLinkActive="item-selected">To-do</a>
+      <a routerLink="albums" routerLinkActive="item-selected">Albums</a>
+      <a routerLink="posts" routerLinkActive="item-selected">Posts</a>
+      <a routerLink=""> Usuários</a>
+    </nav>
+  </div>
+}
+<router-outlet></router-outlet>

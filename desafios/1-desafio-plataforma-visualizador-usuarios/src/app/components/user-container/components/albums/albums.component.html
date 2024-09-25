@@ -1,0 +1,7 @@
+<h1 style="text-align: center;">Albums</h1>
+@for(album of albumsList$ | async; track album){
+  <div class="card-album">
+    <p>Código: {{album.id}}</p>
+    <p>Titulo: {{album.title}}</p>
+  </div>
+}
