@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { TodosListService } from '../../../../services/todos-list.service';
 import { Observable, of } from 'rxjs';
 import { TodosListResponse } from '../../../../types/todos-list-response';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, CommonModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })

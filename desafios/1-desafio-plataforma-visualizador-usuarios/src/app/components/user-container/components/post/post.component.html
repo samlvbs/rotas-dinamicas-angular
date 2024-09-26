@@ -1,0 +1,11 @@
+<div class="container-post">
+  @if (post$ | async; as post) {
+    <div class="card-post">
+      <p>Post: {{post.id}}</p>
+      <h4>Titulo: {{post.title}}</h4>
+      <p>{{post.body}}</p>
+    </div>
+  }
+  <button routerLink="comments">Ver comentários</button>
+</div>
+<router-outlet></router-outlet>

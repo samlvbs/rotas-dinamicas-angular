@@ -1,0 +1,9 @@
+<h2 style="text-align: center;">Comentarios</h2>
+@for (comment of commentsList$ | async; track comment) {
+  <div class=" card-comment">
+    <h4>Nome: {{comment.name}}</h4>
+    <p>Email: {{comment.email}}</p>
+    <p>{{comment.body}}</p>
+  </div>
+
+}

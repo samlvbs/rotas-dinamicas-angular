@@ -20,8 +20,4 @@ export class PostsListServices{
   getPost(postId: string): Observable<IPost>{
     return this._http.get<IPost>('https://jsonplaceholder.typicode.com/posts/'+postId)
   }
-
-
-
-
 }

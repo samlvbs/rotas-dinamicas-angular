@@ -18,5 +18,4 @@ export class UsersListService {
   getUser(userId: string): Observable<IUser>{
     return this._http.get<IUser>('https://jsonplaceholder.typicode.com/users/'+userId)
   }
-
 }

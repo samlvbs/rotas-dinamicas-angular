@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { PostsListServices } from '../../../../services/posts-list.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { PostsListResponse } from '../../../../types/posts-list-response';
 import { AsyncPipe } from '@angular/common';
@@ -8,7 +8,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-posts',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, RouterLink],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss'
 })

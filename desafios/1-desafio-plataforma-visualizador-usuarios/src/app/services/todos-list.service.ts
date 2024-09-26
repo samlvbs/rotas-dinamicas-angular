@@ -8,10 +8,9 @@ import { TodosListResponse } from "../types/todos-list-response";
 })
 
 export class TodosListService{
-private readonly _http = inject(HttpClient)
+  private readonly _http = inject(HttpClient)
 
-getUserTodos(userId: string): Observable<TodosListResponse>{
-  return this._http.get<TodosListResponse>('https://jsonplaceholder.typicode.com/todos?userId='+userId)
-}
-
+  getUserTodos(userId: string): Observable<TodosListResponse>{
+    return this._http.get<TodosListResponse>('https://jsonplaceholder.typicode.com/todos?userId='+userId)
+  }
 }

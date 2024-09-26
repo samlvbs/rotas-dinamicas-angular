@@ -1,0 +1,21 @@
+.container-post{
+  margin: 20px;
+}
+.card-post{
+  padding: 10px;
+  background-color: gray;
+  border-radius: 10px;
+}
+button{
+  background-color: azure;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover{
+    background-color: rgb(38, 49, 58);
+    color: white;
+  }
+}
