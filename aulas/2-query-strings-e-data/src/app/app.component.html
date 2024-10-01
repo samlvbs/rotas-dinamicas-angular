@@ -1,0 +1,11 @@
+<button routerLink="/comp1" [queryParams]="{nome: 'Samuel', idade:27}">Redirecionar Samuel</button>
+<button routerLink="/comp1" [queryParams]="{nome: 'Larissa', idade:26}">Redirecionar Larissa</button>
+
+<button routerLink="/comp1">Redirecionar sem preservar</button>
+<button routerLink="/comp2" queryParamsHandling="preserve">Redirecionar preservando</button>
+
+<button routerLink="/comp2" queryParamsHandling="merge" [queryParams]="{status: 'ativo'}">Redirecionar com merge</button>
+
+<button routerLink="/generic-user">Generic User</button>
+<button routerLink="/generic-admin">Generic Admin</button>
+<router-outlet></router-outlet>
