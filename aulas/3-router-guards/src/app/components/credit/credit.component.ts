@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   standalone: true,
   selector: 'app-credit',
   templateUrl: './credit.component.html',
-  styleUrls: ['./credit.component.css']
+  styleUrls: ['./credit.component.scss']
 })
 export class CreditComponent {
 

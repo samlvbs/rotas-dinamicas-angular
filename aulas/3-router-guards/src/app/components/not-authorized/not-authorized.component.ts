@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   standalone: true,
   selector: 'app-not-authorized',
   templateUrl: './not-authorized.component.html',
-  styleUrls: ['./not-authorized.component.css']
+  styleUrls: ['./not-authorized.component.scss']
 })
 export class NotAuthorizedComponent {
 
