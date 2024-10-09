@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
@@ -8,6 +8,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { DebitComponent } from './components/debit/debit.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { authGuard } from './guards/auth.guard';
+import { scopesGuard } from './guards/scopes.guard';
+import { authWithScopesGuard } from './guards/auth-with-scopes.guard';
 
 export const routes: Routes = [
   {
@@ -22,7 +24,8 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard()],
+    canActivate: [authWithScopesGuard('dashboard')],
+    canActivateChild: [authGuard()],
     children: [
       {
         path: '',
@@ -36,6 +39,7 @@ export const routes: Routes = [
       {
         path: 'payments',
         component: PaymentsComponent,
+        canActivate: [scopesGuard('pagamentos')],
         children: [
           {
             path: 'debit',
@@ -49,7 +53,8 @@ export const routes: Routes = [
       },
       {
         path: 'admin',
-        component: AdminComponent
+        component: AdminComponent,
+        canActivate: [scopesGuard('admin')],
       }
     ]
   },
