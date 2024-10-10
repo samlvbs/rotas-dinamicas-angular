@@ -11,7 +11,7 @@ const TOKEN_EXPIRATION = 300;
 // Lista de usuários estática
 const users = [
     {
-      username: 'user', 
+      username: 'user',
       password: 'user',
       scopes: ['dashboard', 'pagamentos'],
       walletStatus: 'active',
@@ -39,7 +39,7 @@ app.post('/login', (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ username, scopes: user.scopes }, SECRET_KEY, { expiresIn: TOKEN_EXPIRATION });
+    const token = jwt.sign({ username, scopes: user.scopes, walletStatus: user.walletStatus }, SECRET_KEY, { expiresIn: TOKEN_EXPIRATION });
 
     res.json({ token });
 });

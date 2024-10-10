@@ -5,7 +5,7 @@ import { catchError, map } from "rxjs";
 
 export const authGuard = (): CanActivateFn => {
   return (): MaybeAsync<GuardResult> => {
-    console.log("authGuard: ",authGuard);
+    console.log("authGuard: ");
 
     const authService = inject(AuthService);
     const router = inject(Router);
