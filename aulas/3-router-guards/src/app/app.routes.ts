@@ -11,6 +11,8 @@ import { authGuard } from './guards/auth.guard';
 import { scopesGuard } from './guards/scopes.guard';
 import { authWithScopesGuard } from './guards/auth-with-scopes.guard';
 import { walletGuard } from './guards/wallet.guard';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { generalInfosResolver } from './resolvers/general-infos.resolver';
 
 export const routes: Routes = [
   {
@@ -35,22 +37,36 @@ export const routes: Routes = [
       },
       {
         path: 'general',
-        component: GeneralComponent
+        component: GeneralComponent,
+        resolve: {
+          generalInfos: generalInfosResolver
+        }
       },
       {
         path: 'payments',
         component: PaymentsComponent,
         canActivate: [scopesGuard('pagamentos')],
-        canActivateChild: [walletGuard()],
+
         children: [
           {
-            path: 'debit',
-            component: DebitComponent,
+            path:'',
+            canActivateChild: [walletGuard()],
+            children: [
+              {
+                path: 'debit',
+                component: DebitComponent,
+              },
+              {
+                path: 'credit',
+                component: CreditComponent,
+              }
+            ]
           },
           {
-            path: 'credit',
-            component: CreditComponent,
+            path: 'contacts',
+            component: ContactsComponent,
           }
+
         ]
       },
       {
@@ -68,7 +84,7 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'not-found',
+    path: '**',
     component: NotAuthorizedComponent,
     data: {
       type: 'not-found'

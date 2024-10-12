@@ -20,6 +20,7 @@ export class PaymentsComponent {
       if(success){
         this.isWalletBlocked = false;
       } else {
+        this._router.navigate(['/dashboard/payments']);
         this.isWalletBlocked = true;
       }
       console.log(success);
